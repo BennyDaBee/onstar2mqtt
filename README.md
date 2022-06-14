@@ -13,42 +13,14 @@ Collect the following information:
 1. MQTT server information: hostname, username, password
     1. If using TLS, define `MQTT_PORT` and `MQTT_TLS=true`
 
-Supply these values to the ENV vars below.
-### [Docker](https://hub.docker.com/r/michaelwoods/onstar2mqtt)
+### Install on Ubuntu
+I know this works for Ubuntu. 
+`git pull https://www.github.com/BennyDaBee/onstar2mqtt`
+After it pulls, move to the onstar2mqtt directory. 
+`npm install`
+This will install all the dependencies. 
+The way I do things is not best practice, but I do edit the index.js in src with my credentials for MQTT and Onstar. 
 
-```shell
-docker run \
-  --env ONSTAR_DEVICEID= \
-  --env ONSTAR_VIN= \
-  --env ONSTAR_USERNAME= \
-  --env ONSTAR_PASSWORD= \
-  --env ONSTAR_PIN= \
-  --env MQTT_HOST= \
-  --env MQTT_USERNAME \
-  --env MQTT_PASSWORD \
-  michaelwoods/onstar2mqtt:latest
-```
-### docker-compose
-```yaml
-  onstar2mqtt:
-    container_name: onstar2mqtt
-    image: michaelwoods/onstar2mqtt
-    restart: unless-stopped
-    env_file:
-      - /srv/containers/secrets/onstar2mqtt.env
-    environment:
-    - ONSTAR_DEVICEID=
-    - ONSTAR_VIN=
-    - MQTT_HOST=
-```
-onstar2mqtt.env:
-```shell
-ONSTAR_USERNAME=
-ONSTAR_PASSWORD=
-ONSTAR_PIN=
-MQTT_USERNAME=
-MQTT_PASSWORD=
-```
 ### Node.js
 It's a typical node.js application, define the same environment values as described in the docker sections and run with:
 `npm run start`. Currently, this is only tested with Node.js 12.x.
