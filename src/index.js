@@ -11,10 +11,10 @@ const logger = require('./logger');
 
 const onstarConfig = {
     deviceId: process.env.ONSTAR_DEVICEID || uuidv4(),
-    vin: process.env.ONSTAR_VIN,
-    username: process.env.ONSTAR_USERNAME,
-    password: process.env.ONSTAR_PASSWORD,
-    onStarPin: process.env.ONSTAR_PIN,
+    vin: process.env.ONSTAR_VIN || 'vin',
+    username: process.env.ONSTAR_USERNAME || 'onstaremail',
+    password: process.env.ONSTAR_PASSWORD || 'password',
+    onStarPin: process.env.ONSTAR_PIN || 'pin',
     checkRequestStatus: process.env.ONSTAR_SYNC === "true" || true,
     refreshInterval: parseInt(process.env.ONSTAR_REFRESH) || (30 * 60 * 1000), // 30 min
     allowCommands: _.toLower(_.get(process, 'env.ONSTAR_ALLOW_COMMANDS', 'true')) === 'true'
@@ -23,8 +23,8 @@ logger.info('OnStar Config', {onstarConfig});
 
 const mqttConfig = {
     host: process.env.MQTT_HOST || 'localhost',
-    username: process.env.MQTT_USERNAME,
-    password: process.env.MQTT_PASSWORD,
+    username: process.env.MQTT_USERNAME || 'mqtt username',
+    password: process.env.MQTT_PASSWORD || 'mqtt password',
     port: parseInt(process.env.MQTT_PORT) || 1883,
     tls: process.env.MQTT_TLS || false,
     prefix: process.env.MQTT_PREFIX || 'homeassistant',
