@@ -27,7 +27,7 @@ icon: 'mdi:map-marker'
 ### Lovelace Dashboard
 Create a new dashboard, or use the cards in your own view. The `mdi:car` icon works well here.
 
-![lovelace screenshot](images/lovelace.png)
+![lovelace screenshot](image/lovelace.png)
 
 #### script yaml:
 ```yaml
