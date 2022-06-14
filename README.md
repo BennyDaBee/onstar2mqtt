@@ -14,12 +14,12 @@ Collect the following information:
     1. If using TLS, define `MQTT_PORT` and `MQTT_TLS=true`
 
 ### Install on Ubuntu
-I know this works for Ubuntu. 
-`git pull https://www.github.com/BennyDaBee/onstar2mqtt`
-After it pulls, move to the onstar2mqtt directory. 
-`npm install`
-This will install all the dependencies. 
-The way I do things is not best practice, but I do edit the index.js in src with my credentials for MQTT and Onstar. 
+I know this works for Ubuntu.  
+`git pull https://www.github.com/BennyDaBee/onstar2mqtt`  
+After it pulls, move to the onstar2mqtt directory.  
+`npm install`  
+This will install all the dependencies.  
+The way I do things is not best practice, but I do edit the index.js in src with my credentials for MQTT and Onstar.  
 
 ### Node.js
 It's a typical node.js application, define the same environment values as described in the docker sections and run with:
